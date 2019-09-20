@@ -24,9 +24,27 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
     compileOnly 'org.projectlombok:lombok'
+    compile "org.springframework.boot:spring-boot-starter-data-mongodb"
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.2')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.2')
+    compile('org.apache.httpcomponents:httpclient:4.5.8')
+    compile("org.springframework.boot:spring-boot-starter-freemarker")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
+
+    testCompile("org.springframework.boot:spring-boot-starter-test") {
+        exclude group: 'junit'
+        exclude group: 'org.mockito'
+    }
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation("org.junit.jupiter:junit-jupiter:5.4.2")
+    testCompile('org.mockito:mockito-junit-jupiter:2.28.2')
+    testCompile('org.mockito:mockito-core:2.28.2')
 }
